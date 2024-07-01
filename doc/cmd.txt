@@ -1,0 +1,141 @@
++------------------------+---------------------------+
+| hostname               | _os.Hostname()            |
+|                        |                           |
+|                        | cat /etc/hostname         |
+|                        | hostname                  |
++------------------------+---------------------------+
+| ip                     | ip -family inet address   |
+|                        |                           |
+|                        | ifconfig                  |
+|                        | ip -4 a                   |
+|                        | ip a                      |
++------------------------+---------------------------+
+| os_type                | cat /etc/issue            |
+|                        | cat /etc/centos-release   |
+|                        | cat /etc/redhat-release   |
+|                        |                           |
+|                        | cat /etc/lsb-release      |
+|                        | cat /etc/os-release       |
+|                        | lsb_release -a            |
++------------------------+---------------------------+
+| architecture           | uname -m                  |
+|                        |                           |
+|                        | getconf LONG_BIT          |
+|                        | lscpu                     |
+|                        | uname -a                  |
++------------------------+---------------------------+
+| kernel                 | uname -r                  |
+|                        |                           |
+|                        | uname -a                  |
++------------------------+---------------------------+
+| loadavg                | cat /proc/loadavg         |
+|                        |                           |
+|                        | top -b -n1                |
+|                        | uptime                    |
+|                        | w                         |
++------------------------+---------------------------+
+| cpu_processors         | cat /proc/cpuinfo         |
+|                        |                           |
+|                        | lscpu                     |
+|                        | nproc                     |
++------------------------+---------------------------+
+| mem_size               | cat /proc/meminfo         |
+|                        |                           |
+|                        | free                      |
+|                        | top -b -n1                |
++------------------------+---------------------------+
+| swap_size              | cat /proc/meminfo         |
+|                        |                           |
+|                        | free                      |
+|                        | swapon -s                 |
+|                        | top -b -n1                |
++------------------------+---------------------------+
+| disk_size              | cat /proc/mounts          |
+|                        | _syscall.Statfs()         |
+|                        |                           |
+|                        | df -kl                    |
+|                        | lsblk                     |
+|                        | mount                     |
++------------------------+---------------------------+
+| users                  | users                     |
+|                        |                           |
+|                        | top -b -n1                |
+|                        | uptime                    |
+|                        | w                         |
+|                        | who                       |
++------------------------+---------------------------+
+| uptime                 | cat /proc/uptime          |
+|                        |                           |
+|                        | top -b -n1                |
+|                        | uptime                    |
+|                        | w                         |
++------------------------+---------------------------+
+|                        |                           |
++------------------------+---------------------------+
+| loadavg                | cat /proc/loadavg         |
+| - loadavg_1m           |                           |
+| - loadavg_5m           |                           |
+| - loadavg_15m          |                           |
+|                        |                           |
+|                        | w                         |
+|                        | top -b -n1                |
++------------------------+---------------------------+
+| cpu_usage              | cat /proc/stat            |
+| - cpu_used             |                           |
+| - cpu_iowait           |                           |
+|                        |                           |
+|                        | top -b -n1                |
+|                        | vmstat                    |
++------------------------+---------------------------+
+| mem_usage              | cat /proc/meminfo         |
+| - mem_used             |                           |
+| - swap_used            |                           |
+|                        |                           |
+|                        | cat /proc/swaps           |
+|                        | free                      |
+|                        | swapon -s                 |
+|                        | top -b -n1                |
+|                        | vmstat                    |
+|                        | vmstat -s                 |
++------------------------+---------------------------+
+| disk_usage             | cat /proc/mounts          |
+| - disk_used            | _syscall.Statfs()         |
+| - inode_used           |                           |
+|                        |                           |
+|                        | blkid                     |
+|                        | df -kl                    |
+|                        | df -il                    |
+|                        | fdisk -l                  |
++------------------------+---------------------------+
+| disk_io_rate           | cat /proc/diskstats       |
+| - disk_read_rate       |                           |
+| - disk_write_rate      |                           |
+| - disk_ios             |                           |
+|                        |                           |
+|                        | iotop -b -n1              |
+|                        | vmstat                    |
++------------------------+---------------------------+
+| nic_io_rate            | cat /proc/net/dev         |
+| - nic_receive_rate     |                           |
+| - nic_receive_packets  |                           |
+| - nic_transmit_rate    |                           |
+| - nic_transmit_packets |                           |
+|                        |                           |
+|                        | iftop -b -n1              |
+|                        | nethogs                   |
+|                        | nload                     |
++------------------------+---------------------------+
+| tcp_sockets            | cat /proc/net/sockstat    |
+| - tcp_sockets_inuse    | cat /proc/net/sockstat6   |
+| - tcp_sockets_tw       |                           |
+|                        |                           |
+|                        | netstat -antp             |
+|                        | ss -antp                  |
++------------------------+---------------------------+
+|                        |                           |
++------------------------+---------------------------+
+| current_time           | _time.Now()               |
+|                        |                           |
+|                        | date '+%F %T'             |
+|                        | date '+%Y-%m-%d %H:%M:%S' |
++------------------------+---------------------------+
