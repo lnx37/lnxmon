@@ -1,0 +1,14 @@
+/**/*.log
+
+/build/
+
+/lib/go-sqlite3/
+/lib/go-sqlite3-1.14.16/
+
+/lnxmon.db
+/lnxmon.db-journal
+
+/lnxmoncli
+/lnxmonsrv
+
+sync.sh
